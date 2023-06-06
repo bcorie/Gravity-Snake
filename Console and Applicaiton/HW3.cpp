@@ -139,8 +139,6 @@ int main()
 	// run the program as long as the window is open
 	while (window.isOpen())
 	{
-		//cout << score << " " << highScore << endl;
-
 		// check all the window's events that were triggered since the last iteration of the loop
 		sf::Event event;
 		window.pollEvent(event);
@@ -164,7 +162,6 @@ int main()
 			{
 				play = true;
 			}
-
 		}
 
 		else
@@ -197,7 +194,7 @@ int main()
 				//Process input and apply forces to the snake.
 				//Removed from Functions.h for more versatility and score measuring
 				#pragma region input handling
-// direct key presses
+				// direct key presses
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 				{
 					// only valid keypress if on ground
@@ -247,8 +244,7 @@ int main()
 				{
 					keyHolds[2] = false;
 				}
-
-#pragma endregion
+				#pragma endregion
 
 				//This function checks if the snake is close to the target. It takes in a maximum collision distance.
 				//This function is from the DLL.
@@ -303,9 +299,9 @@ int main()
 	}
 	
 	// memory cleanup
-	//delete[] keyHolds;
-	//delete& snake;
-	//snake = nullptr;
+	delete[] keyHolds;
+	delete& snake;
+	snake = nullptr;
 
 	releaseVariables();
 }
